@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class DBBaseModel {
+public class BaseDBModel {
     @Id
     @GeneratedValue(strategy= GenerationType.TABLE)
     private Long id;
