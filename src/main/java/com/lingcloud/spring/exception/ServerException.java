@@ -1,24 +1,24 @@
 package com.lingcloud.spring.exception;
 
-import com.lingcloud.spring.model.ex.EXServerModel;
+import com.lingcloud.spring.model.ex.ServerEXModel;
 
 public class ServerException extends RuntimeException {
-    public EXServerModel getExServerModel() {
-        return exServerModel;
+    public ServerEXModel getServerEXModel() {
+        return serverEXModel;
     }
 
-    public void setExServerModel(EXServerModel exServerModel) {
-        this.exServerModel = exServerModel;
+    public void setServerEXModel(ServerEXModel serverEXModel) {
+        this.serverEXModel = serverEXModel;
     }
 
-    private EXServerModel exServerModel;
+    private ServerEXModel serverEXModel;
 
     public ServerException(){
 
     }
 
-    public ServerException(EXServerModel exServerModel){
-        this.exServerModel = exServerModel;
+    public ServerException(ServerEXModel serverEXModel){
+        this.serverEXModel = serverEXModel;
     }
 
 }

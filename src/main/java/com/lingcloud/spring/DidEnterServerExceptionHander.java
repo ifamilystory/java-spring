@@ -1,6 +1,6 @@
 package com.lingcloud.spring;
 
-import com.lingcloud.spring.model.re.REBaseModel;
+import com.lingcloud.spring.model.re.BaseREModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,8 +13,8 @@ public class DidEnterServerExceptionHander {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
-    REBaseModel validateErrorHandler(Exception e) {
-        REBaseModel res = new REBaseModel();
+    BaseREModel validateErrorHandler(Exception e) {
+        BaseREModel res = new BaseREModel();
         res.setSuccess(false);
         res.setData(e);
         return res;

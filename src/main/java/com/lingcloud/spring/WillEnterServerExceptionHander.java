@@ -1,7 +1,7 @@
 package com.lingcloud.spring;
 
-import com.lingcloud.spring.model.ex.EXServerModel;
-import com.lingcloud.spring.model.re.REBaseModel;
+import com.lingcloud.spring.model.ex.ServerEXModel;
+import com.lingcloud.spring.model.re.BaseREModel;
 import org.springframework.boot.actuate.endpoint.invoke.MissingParametersException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -21,18 +21,19 @@ import java.util.List;
 public class WillEnterServerExceptionHander {
     @ExceptionHandler(BindException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public @ResponseBody REBaseModel validateErrorHandler(BindException e) {
+    public @ResponseBody
+    BaseREModel validateErrorHandler(BindException e) {
         BindingResult bindingResult = e.getBindingResult();
         if (bindingResult.hasErrors()) {
             List<FieldError> errorList = bindingResult.getFieldErrors();
             String errorMsg = errorList.get(0).getField() + " 字段错误，错误原因:" + errorList.get(0).getDefaultMessage();
-            REBaseModel res = new REBaseModel();
-            EXServerModel serverErrorModel = new EXServerModel(HttpStatus.BAD_REQUEST.value(),errorMsg);
+            BaseREModel res = new BaseREModel();
+            ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),errorMsg);
             res.setData(serverErrorModel);
             res.setSuccess(false);
             return res;
         } else {
-            REBaseModel res = new REBaseModel();
+            BaseREModel res = new BaseREModel();
             res.setSuccess(false);
             res.setData(e);
             return res;
@@ -41,9 +42,10 @@ public class WillEnterServerExceptionHander {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public @ResponseBody REBaseModel validateHttpMessageNotReadableException(HttpMessageNotReadableException e) {
-        REBaseModel res = new REBaseModel();
-        EXServerModel serverErrorModel = new EXServerModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
+    public @ResponseBody
+    BaseREModel validateHttpMessageNotReadableException(HttpMessageNotReadableException e) {
+        BaseREModel res = new BaseREModel();
+        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
         res.setData(serverErrorModel);
         res.setSuccess(false);
         return res;
@@ -51,9 +53,10 @@ public class WillEnterServerExceptionHander {
 
     @ExceptionHandler(MissingParametersException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public @ResponseBody REBaseModel validateMissingParametersException(MissingParametersException e) {
-        REBaseModel res = new REBaseModel();
-        EXServerModel serverErrorModel = new EXServerModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
+    public @ResponseBody
+    BaseREModel validateMissingParametersException(MissingParametersException e) {
+        BaseREModel res = new BaseREModel();
+        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
         res.setData(serverErrorModel);
         res.setSuccess(false);
         return res;
@@ -62,9 +65,10 @@ public class WillEnterServerExceptionHander {
 
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public @ResponseBody REBaseModel errorHandler(HttpServletRequest request, Exception e) {
-        REBaseModel res = new REBaseModel();
-        EXServerModel serverErrorModel = new EXServerModel(HttpStatus.INTERNAL_SERVER_ERROR.value(),e.getMessage());
+    public @ResponseBody
+    BaseREModel errorHandler(HttpServletRequest request, Exception e) {
+        BaseREModel res = new BaseREModel();
+        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.INTERNAL_SERVER_ERROR.value(),e.getMessage());
         res.setData(serverErrorModel);
         res.setSuccess(false);
         return res;

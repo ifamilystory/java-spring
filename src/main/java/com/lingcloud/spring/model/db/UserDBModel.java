@@ -1,13 +1,17 @@
-package com.lingcloud.spring.model.rt;
+package com.lingcloud.spring.model.db;
 
+import org.hibernate.validator.constraints.UniqueElements;
 
-import javax.validation.constraints.*;
+import javax.persistence.Entity;
 
-public class RTUserLoginModel {
+@Entity
+public class UserDBModel extends BaseDBModel {
+    @UniqueElements
     private String account;
-    @Size(min=8, max=30)
+    @UniqueElements
     private String name;
     private String nickName;
+
     public String getAccount() {
         return account;
     }
@@ -48,17 +52,23 @@ public class RTUserLoginModel {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    @NotNull
     private String password;
-    @Email(message = "Not a vaild Email Address")
+    @UniqueElements
     private String email;
-    private int phone;
+    @UniqueElements
+    private String phone;
+
+
+    public UserDBModel(String account, String password){
+        this.account = account;
+        this.password = password;
+    }
 }

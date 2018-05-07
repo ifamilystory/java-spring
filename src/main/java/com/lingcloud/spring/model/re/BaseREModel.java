@@ -1,6 +1,6 @@
 package com.lingcloud.spring.model.re;
 
-public class REBaseModel<T> {
+public class BaseREModel<T> {
     private T data;
 
     public T getData() {

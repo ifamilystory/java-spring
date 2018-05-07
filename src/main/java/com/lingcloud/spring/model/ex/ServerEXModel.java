@@ -1,6 +1,6 @@
 package com.lingcloud.spring.model.ex;
 
-public class EXServerModel {
+public class ServerEXModel {
 
     public enum CodeEnum {
         ErrorPassword(10000,"密码错误");
@@ -63,14 +63,14 @@ public class EXServerModel {
         this.code = code;
     }
 
-    public EXServerModel(){
+    public ServerEXModel(){
 
     }
-    public EXServerModel(Integer code, String message){
+    public ServerEXModel(Integer code, String message){
         this.code = code;
         this.message = message;
     }
-    public EXServerModel(CodeEnum codeEnum){
+    public ServerEXModel(CodeEnum codeEnum){
         this.codeEnum = codeEnum;
     }
 }

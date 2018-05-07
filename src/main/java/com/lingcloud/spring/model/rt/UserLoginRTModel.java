@@ -1,10 +1,13 @@
-package com.lingcloud.spring.model.ui;
+package com.lingcloud.spring.model.rt;
 
-public class UIUserModel {
+
+import javax.validation.constraints.*;
+
+public class UserLoginRTModel {
     private String account;
+    @Size(min=8, max=30)
     private String name;
     private String nickName;
-
     public String getAccount() {
         return account;
     }
@@ -45,22 +48,17 @@ public class UIUserModel {
         this.email = email;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
+    @NotNull
     private String password;
+    @Email(message = "Not a vaild Email Address")
     private String email;
-    private String phone;
-
-
-    public UIUserModel (String account,String password){
-        this.account = account;
-        this.password = password;
-    }
-
+    private int phone;
 }

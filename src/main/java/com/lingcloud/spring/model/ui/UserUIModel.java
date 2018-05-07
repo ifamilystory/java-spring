@@ -1,15 +1,7 @@
-package com.lingcloud.spring.model.db;
+package com.lingcloud.spring.model.ui;
 
-import org.hibernate.validator.constraints.UniqueElements;
-
-import javax.persistence.Entity;
-import javax.persistence.UniqueConstraint;
-
-@Entity
-public class DBUserModel extends DBBaseModel {
-    @UniqueElements
+public class UserUIModel {
     private String account;
-    @UniqueElements
     private String name;
     private String nickName;
 
@@ -62,14 +54,13 @@ public class DBUserModel extends DBBaseModel {
     }
 
     private String password;
-    @UniqueElements
     private String email;
-    @UniqueElements
     private String phone;
 
 
-    public DBUserModel (String account,String password){
+    public UserUIModel(String account, String password){
         this.account = account;
         this.password = password;
     }
+
 }
