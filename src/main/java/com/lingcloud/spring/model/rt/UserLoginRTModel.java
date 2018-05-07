@@ -1,11 +1,14 @@
 package com.lingcloud.spring.model.rt;
 
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.validation.constraints.*;
 
 public class UserLoginRTModel {
+    @NotNull(message = "用户名不能为空")
+    @Length(min = 4,max = 32,message = "用户名长度为4-32位")
     private String account;
-    @Size(min=8, max=30)
     private String name;
     private String nickName;
     public String getAccount() {
@@ -56,7 +59,7 @@ public class UserLoginRTModel {
         this.phone = phone;
     }
 
-    @NotNull
+    @NotNull(message = "密码不能为空")
     private String password;
     @Email(message = "Not a vaild Email Address")
     private String email;

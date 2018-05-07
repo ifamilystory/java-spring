@@ -2,13 +2,13 @@ package com.lingcloud.spring.model.db;
 
 import org.hibernate.validator.constraints.UniqueElements;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class UserDBModel extends BaseDBModel {
-    @UniqueElements
+    @Column(unique=true,nullable=false,length = 32)
     private String account;
-    @UniqueElements
     private String name;
     private String nickName;
 
@@ -59,11 +59,11 @@ public class UserDBModel extends BaseDBModel {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
+    @Column(nullable=false)
     private String password;
-    @UniqueElements
+    @Column(unique=true)
     private String email;
-    @UniqueElements
+    @Column(unique=true)
     private String phone;
 
 

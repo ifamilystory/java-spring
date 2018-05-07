@@ -18,7 +18,7 @@ import java.util.List;
 
 @ControllerAdvice
 @ResponseBody
-public class WillEnterServerExceptionHander {
+public class ServerExceptionHander {
     @ExceptionHandler(BindException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public @ResponseBody
@@ -73,4 +73,14 @@ public class WillEnterServerExceptionHander {
         res.setSuccess(false);
         return res;
     }
+
+//    @ExceptionHandler(Exception.class)
+//    @ResponseStatus(HttpStatus.OK)
+//    public @ResponseBody
+//    BaseREModel validateErrorHandler(Exception e) {
+//        BaseREModel res = new BaseREModel();
+//        res.setSuccess(false);
+//        res.setData(e);
+//        return res;
+//    }
 }
