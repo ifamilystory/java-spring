@@ -79,6 +79,7 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.4" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.3" />
           <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.10.0" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.46/1510c47faaf3d484221ab20e4ec9d42cfa4984cb/fastjson-1.2.46.jar" />
         </element>
       </element>
     </root>
