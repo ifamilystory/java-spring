@@ -5,24 +5,16 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.lingcloud.spring.SpringDemoApplication;
-import com.lingcloud.spring.filter.ApplicationFilter;
-import com.lingcloud.spring.filter.UserFilter;
 import com.lingcloud.spring.interceptor.ApplicationInterceptor;
 import com.lingcloud.spring.model.ex.ServerEXModel;
 
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-import org.springframework.web.servlet.mvc.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,4 +105,5 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
         SerializeConfig.getGlobalInstance().configEnumAsJavaBean(ServerEXModel.CodeEnum.class);
 
     }
+
 }
