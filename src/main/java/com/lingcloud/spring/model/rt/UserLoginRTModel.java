@@ -1,6 +1,7 @@
 package com.lingcloud.spring.model.rt;
 
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.*;

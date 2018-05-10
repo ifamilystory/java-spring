@@ -1,7 +1,5 @@
 package com.lingcloud.spring.model.db;
 
-import org.hibernate.validator.constraints.UniqueElements;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 

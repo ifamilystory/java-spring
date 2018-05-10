@@ -2,7 +2,7 @@ package com.lingcloud.spring;
 
 import com.lingcloud.spring.model.ex.ServerEXModel;
 import com.lingcloud.spring.model.re.BaseREModel;
-import org.springframework.boot.actuate.endpoint.invoke.MissingParametersException;
+//import org.springframework.boot.actuate.endpoint.invoke.MissingParametersException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -51,14 +52,24 @@ public class ServerExceptionHander {
         return res;
     }
 
-    @ExceptionHandler(MissingParametersException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ExceptionHandler(MissingParametersException.class)
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    public @ResponseBody
+//    BaseREModel validateMissingParametersException(MissingParametersException e) {
+//        BaseREModel res = new BaseREModel();
+//        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
+//        res.setData(serverErrorModel);
+//        res.setSuccess(false);
+//        return res;
+//    }
+
+    @ExceptionHandler(NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody
-    BaseREModel validateMissingParametersException(MissingParametersException e) {
+    BaseREModel validate400Exception(NoHandlerFoundException e) {
         BaseREModel res = new BaseREModel();
-        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
-        res.setData(serverErrorModel);
         res.setSuccess(false);
+        res.setData(new ServerEXModel(HttpStatus.NOT_FOUND.value(),e.getMessage()));
         return res;
     }
 
