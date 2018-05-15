@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration //不是 Configurable
-//@ComponentScan(basePackageClasses = SpringDemoApplication.class, useDefaultFilters = false)
+@ComponentScan(basePackageClasses = SpringDemoApplication.class, useDefaultFilters = false)
 public class ApplicationConfig extends WebMvcConfigurationSupport {
 
     @Override

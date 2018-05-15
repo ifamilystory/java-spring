@@ -7,8 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
     }
 
 }
@@ -33,7 +32,11 @@ repositories {
 }
 
 dependencies {
+//    provided("org.springframework.boot:spring-boot-starter-web"){
+//        exclude module: "spring-boot-starter-tomcat"
+//    }
     compile("org.springframework.boot:spring-boot-starter-web")
+    providedCompile("org.springframework.boot:spring-boot-starter-tomcat")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 

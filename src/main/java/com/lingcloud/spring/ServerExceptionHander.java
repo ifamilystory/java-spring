@@ -3,6 +3,7 @@ package com.lingcloud.spring;
 import com.lingcloud.spring.model.ex.ServerEXModel;
 import com.lingcloud.spring.model.re.BaseREModel;
 //import org.springframework.boot.actuate.endpoint.invoke.MissingParametersException;
+import org.springframework.boot.actuate.endpoint.invoke.MissingParametersException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -52,16 +53,16 @@ public class ServerExceptionHander {
         return res;
     }
 
-//    @ExceptionHandler(MissingParametersException.class)
-//    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    public @ResponseBody
-//    BaseREModel validateMissingParametersException(MissingParametersException e) {
-//        BaseREModel res = new BaseREModel();
-//        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
-//        res.setData(serverErrorModel);
-//        res.setSuccess(false);
-//        return res;
-//    }
+    @ExceptionHandler(MissingParametersException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public @ResponseBody
+    BaseREModel validateMissingParametersException(MissingParametersException e) {
+        BaseREModel res = new BaseREModel();
+        ServerEXModel serverErrorModel = new ServerEXModel(HttpStatus.BAD_REQUEST.value(),e.getMessage());
+        res.setData(serverErrorModel);
+        res.setSuccess(false);
+        return res;
+    }
 
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -84,14 +85,4 @@ public class ServerExceptionHander {
         res.setSuccess(false);
         return res;
     }
-
-//    @ExceptionHandler(Exception.class)
-//    @ResponseStatus(HttpStatus.OK)
-//    public @ResponseBody
-//    BaseREModel validateErrorHandler(Exception e) {
-//        BaseREModel res = new BaseREModel();
-//        res.setSuccess(false);
-//        res.setData(e);
-//        return res;
-//    }
 }

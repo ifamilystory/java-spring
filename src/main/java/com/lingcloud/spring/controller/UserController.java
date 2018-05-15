@@ -17,14 +17,6 @@ public class UserController {
     public @ResponseBody
     BaseREModel login(@RequestBody @Valid UserLoginRTModel userLoginModel){
         BaseREModel baseModel = new BaseREModel();
-//        try {
-//            String[] a = {"1"};
-//            String see = a[2];
-//        }catch (Exception e){
-//            baseModel.setSuccess(false);
-//            return baseModel;
-//        }
-
         if (userLoginModel.getPassword().equals("123456")) {
             baseModel.setSuccess(true);
             baseModel.setData(new UserUIModel(userLoginModel.getAccount(),userLoginModel.getPassword()));
