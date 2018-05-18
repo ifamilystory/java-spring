@@ -4,7 +4,7 @@ import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.lingcloud.spring.SpringDemoApplication;
+import com.lingcloud.spring.SpringBoot1_0Application;
 import com.lingcloud.spring.interceptor.ApplicationInterceptor;
 import com.lingcloud.spring.model.ex.ServerEXModel;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration //不是 Configurable
-@ComponentScan(basePackageClasses = SpringDemoApplication.class, useDefaultFilters = false)
+@ComponentScan(basePackageClasses = SpringBoot1_0Application.class, useDefaultFilters = false)
 public class ApplicationConfig extends WebMvcConfigurationSupport {
 
     @Override

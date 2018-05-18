@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="spring_main" target="1.8" />
       <module name="spring_test" target="1.8" />
+      <module name="springboot1.0_main" target="1.8" />
+      <module name="springboot1.0_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
