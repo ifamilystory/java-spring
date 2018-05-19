@@ -4,12 +4,11 @@ import com.lingcloud.spring.model.ex.ServerEXModel;
 import com.lingcloud.spring.model.re.BaseREModel;
 import com.lingcloud.spring.model.rt.UserLoginRTModel;
 import com.lingcloud.spring.model.ui.UserUIModel;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
