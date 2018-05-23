@@ -1,12 +1,12 @@
-package com.lingcloud.spring.config;
+package com.zhangling.springboot1_0.config;
 
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.lingcloud.spring.SpringBoot1_0Application;
-import com.lingcloud.spring.interceptor.ApplicationInterceptor;
-import com.lingcloud.spring.model.ex.ServerEXModel;
+import com.zhangling.springboot1_0.SpringBoot1_0Application;
+import com.zhangling.springboot1_0.interceptor.ApplicationInterceptor;
+import com.zhangling.springboot1_0.model.ex.ServerEXModel;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

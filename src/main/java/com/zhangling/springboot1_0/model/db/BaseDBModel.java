@@ -1,8 +1,7 @@
-package com.lingcloud.spring.model.db;
+package com.zhangling.springboot1_0.model.db;
 
 import java.util.Date;
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)

@@ -1,7 +1,7 @@
-package com.lingcloud.spring;
+package com.zhangling.springboot1_0;
 
-import com.lingcloud.spring.model.ex.ServerEXModel;
-import com.lingcloud.spring.model.re.BaseREModel;
+import com.zhangling.springboot1_0.model.ex.ServerEXModel;
+import com.zhangling.springboot1_0.model.re.BaseREModel;
 //import org.springframework.boot.actuate.endpoint.invoke.MissingParametersException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;

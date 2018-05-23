@@ -1,4 +1,4 @@
-package com.lingcloud.spring.interceptor;
+package com.zhangling.springboot1_0.interceptor;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

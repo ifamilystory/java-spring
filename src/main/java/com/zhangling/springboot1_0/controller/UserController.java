@@ -1,9 +1,9 @@
-package com.lingcloud.spring.controller;
+package com.zhangling.springboot1_0.controller;
 
-import com.lingcloud.spring.model.ex.ServerEXModel;
-import com.lingcloud.spring.model.re.BaseREModel;
-import com.lingcloud.spring.model.rt.UserLoginRTModel;
-import com.lingcloud.spring.model.ui.UserUIModel;
+import com.zhangling.springboot1_0.model.ex.ServerEXModel;
+import com.zhangling.springboot1_0.model.re.BaseREModel;
+import com.zhangling.springboot1_0.model.rt.UserLoginRTModel;
+import com.zhangling.springboot1_0.model.ui.UserUIModel;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

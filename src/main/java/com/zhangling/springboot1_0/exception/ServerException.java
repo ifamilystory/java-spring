@@ -1,6 +1,6 @@
-package com.lingcloud.spring.exception;
+package com.zhangling.springboot1_0.exception;
 
-import com.lingcloud.spring.model.ex.ServerEXModel;
+import com.zhangling.springboot1_0.model.ex.ServerEXModel;
 
 public class ServerException extends RuntimeException {
     public ServerEXModel getServerEXModel() {

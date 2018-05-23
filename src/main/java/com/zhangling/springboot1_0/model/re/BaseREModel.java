@@ -1,4 +1,4 @@
-package com.lingcloud.spring.model.re;
+package com.zhangling.springboot1_0.model.re;
 
 public class BaseREModel<T> {
     private T data;

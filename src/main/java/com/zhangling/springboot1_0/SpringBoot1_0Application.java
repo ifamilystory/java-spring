@@ -1,4 +1,4 @@
-package com.lingcloud.spring;
+package com.zhangling.springboot1_0;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

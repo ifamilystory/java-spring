@@ -1,11 +1,4 @@
-package com.lingcloud.spring.filter;
-
-import org.apache.tomcat.util.buf.Utf8Decoder;
-import org.apache.tomcat.util.buf.Utf8Encoder;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
+package com.zhangling.springboot1_0.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -20,7 +13,7 @@ import java.io.IOException;
  在spring boot中的FilterRegistrationBean注册过滤器的类中有个order属性，
  private int order = Ordered.LOWEST_PRECEDENCE;
  细看源码可以知道，这个order的默认值是Integer.MAX_VALUE 也就是int的最大值，
- spring boot 会按照order值的大小，从小到大的顺序来依次过滤。
+ springboot1_0 boot 会按照order值的大小，从小到大的顺序来依次过滤。
 
  */
 

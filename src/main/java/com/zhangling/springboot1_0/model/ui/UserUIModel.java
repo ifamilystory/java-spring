@@ -1,4 +1,4 @@
-package com.lingcloud.spring.model.ui;
+package com.zhangling.springboot1_0.model.ui;
 
 public class UserUIModel {
     private String account;

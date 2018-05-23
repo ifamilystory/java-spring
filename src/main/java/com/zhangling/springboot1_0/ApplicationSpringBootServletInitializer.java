@@ -1,7 +1,5 @@
-package com.lingcloud.spring;
+package com.zhangling.springboot1_0;
 
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 //import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 public class ApplicationSpringBootServletInitializer {

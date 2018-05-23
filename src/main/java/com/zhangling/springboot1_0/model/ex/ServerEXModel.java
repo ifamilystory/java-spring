@@ -1,4 +1,4 @@
-package com.lingcloud.spring.model.ex;
+package com.zhangling.springboot1_0.model.ex;
 
 public class ServerEXModel {
 

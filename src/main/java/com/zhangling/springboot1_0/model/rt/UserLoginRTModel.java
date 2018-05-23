@@ -1,15 +1,16 @@
-package com.lingcloud.spring.model.db;
+package com.zhangling.springboot1_0.model.rt;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 
-@Entity
-public class UserDBModel extends BaseDBModel {
-    @Column(unique=true,nullable=false,length = 32)
+import javax.validation.constraints.*;
+
+public class UserLoginRTModel {
+    @NotNull(message = "用户名不能为空")
+    @Length(min = 4,max = 32,message = "用户名长度为4-32位")
     private String account;
     private String name;
     private String nickName;
-
     public String getAccount() {
         return account;
     }
@@ -50,23 +51,17 @@ public class UserDBModel extends BaseDBModel {
         this.email = email;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
-    @Column(nullable=false)
+
+    @NotNull(message = "密码不能为空")
     private String password;
-    @Column(unique=true)
+    @Email(message = "Not a vaild Email Address")
     private String email;
-    @Column(unique=true)
-    private String phone;
-
-
-    public UserDBModel(String account, String password){
-        this.account = account;
-        this.password = password;
-    }
+    private int phone;
 }
